@@ -1,16 +1,83 @@
-# React + Vite
+🎓 Student Management App (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Student Management Application built with React and React-Bootstrap.
+This app allows users to add student details via a form and display them in a table dynamically.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📋 Add student details using a form
 
-## React Compiler
+🧠 State management using React useState
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🔄 Dynamic rendering of student list
 
-## Expanding the ESLint configuration
+🎨 Responsive UI using React-Bootstrap
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+❌ Displays “Data is Empty” when no records exist
+
+♻️ Form auto-resets after submission
+
+🛠️ Tech Stack
+
+React (Vite)
+
+JavaScript (ES6+)
+
+React-Bootstrap
+
+Bootstrap 5
+
+HTML5 & CSS3
+
+📂 Project Structure
+src/
+│
+├── Components/
+│   ├── StudentContainer.jsx
+│   ├── StudentForm.jsx
+│   └── StudentList.jsx
+│
+├── App.jsx
+├── main.jsx
+├── index.css
+│
+public/
+│
+└── index.html
+
+🧩 Component Overview
+🔹 StudentContainer
+
+Acts as the parent component
+
+Holds the student list state
+
+Passes data between form and table
+
+🔹 StudentForm
+
+Controlled form using useState
+
+Accepts:
+
+GR ID
+
+Full Name
+
+Course Name
+
+Contact Number
+
+Address
+
+Sends data to parent on submit
+
+🔹 StudentList
+
+Displays student data in a table
+
+Handles empty state gracefully
+
+🖥️ UI Preview
+
+Student Form – Enter student details
