@@ -1,96 +1,149 @@
-🎓 Student Management App (React)
+explorer-studentdata-react.netlify.app/
 
-A simple Student Management Application built with React and React-Bootstrap.
-This app allows users to add student details via a form and display them in a table dynamically.
+Features
 
-🚀 Features
+Add new products
 
-📋 Add student details using a form
+Update existing products
 
-🧠 State management using React useState
+Redux Toolkit state management
 
-🔄 Dynamic rendering of student list
+Auto-fill form when editing a product
 
-🎨 Responsive UI using React-Bootstrap
+Controlled form inputs
 
-❌ Displays “Data is Empty” when no records exist
+Single form for Add / Update
 
-♻️ Form auto-resets after submission
+Clean and reusable logic
 
-🛠️ Tech Stack
+| Field    | Description            |
+| -------- | ---------------------- |
+| Name     | Product name           |
+| Price    | Product price          |
+| Category | Product category       |
+| Quantity | Product stock quantity |
 
-React (Vite)
+🛠️ Technologies Used
+
+React
+
+Redux Toolkit
+
+React Redux Hooks (useDispatch, useSelector)
 
 JavaScript (ES6+)
 
-React-Bootstrap
 
-Bootstrap 5
+📦 Redux Structure
+Redux Slice Location
+src/futures/Products/productSlice.js
 
-HTML5 & CSS3
+Actions Used
+Action	      Description
+addProduct	  Adds a new product
+updateProduct  	Updates an existing product
+setUpdateState	  Sets or clears update mode
 
-📂 Project Structure
+🧠 Component Logic Overview
+Local State
+const [product, setProduct] = useState({
+    name: "",
+    price: "",
+    category: "",
+    qty: 10,
+});
+
+
+Manages form inputs
+
+Resets after submit
+
+
+Add Product Flow
+
+User fills the form
+
+Clicks Submit
+
+addProduct action is dispatched
+
+Product is stored in Redux
+
+Alert confirms addition
+
+Update Product Flow
+
+User selects a product to edit
+
+updateState is set in Redux
+
+useEffect populates the form
+
+User edits details
+
+Clicks Update
+
+updateProduct action is dispatched
+
+Update state is cleared
+
+
+🔄 useEffect for Edit Mode
+useEffect(() => {
+    if (updateState) {
+        setProduct(updateState.product);
+    }
+}, [updateState]);
+
+
+Automatically fills form when updating a product
+
+📄 Component Usage
+import InputForm from "./components/InputForm";
+
+function App() {
+    return (
+        <div>
+            <InputForm />
+        </div>
+    );
+}
+
+export default App;
+🎯 Button Behavior
+
+| Mode   | Button Text |
+| ------ | ----------- |
+| Add    | Submit      |
+| Update | Update      |
+
+
+
+📌 Folder Structure Example
 src/
-<br/>
-│
-<br/>
-├── Components/
-<br/>
-│   ├── StudentContainer.jsx
-<br/>
-│   ├── StudentForm.jsx
-<br/>
-│   └── StudentList.jsx
-<br/>
-│
-<br/>
-├── App.jsx
-<br/>
-├── main.jsx
-<br/>
-├── index.css
-<br/>
-│
-<br/>
-public/
-<br/>
-│
-<br/>
-└── index.html
+ ├── components/
+ │    └── InputForm.jsx
+ ├── futures/
+ │    └── Products/
+ │         └── productSlice.js
+ ├── store.js
+ └── App.js
 
-🧩 Component Overview
-🔹 StudentContainer
+ ✅ Future Enhancements
 
-Acts as the parent component
+Form validation
 
-Holds the student list state
+Toast notifications instead of alerts
 
-Passes data between form and table
+Persist data with localStorage or API
+ling (Bootstrap / Tailwind)
 
-🔹 StudentForm
+Search and filter products
 
-Controlled form using useState
+📜 License
 
-Accepts:
+This project is open-source and intended for learning and practice purposes.
 
-GR ID
 
-Full Name
+UI sty<img width="1651" height="816" alt="Screenshot 2025-12-29 202341" src="https://github.com/user-attachments/assets/50280d5d-a4f7-4b20-87bf-ccdf422c0576" />
 
-Course Name
-
-Contact Number
-
-Address
-
-Sends data to parent on submit
-
-🔹 StudentList
-
-Displays student data in a table
-
-Handles empty state gracefully
-
-🖥️ UI Preview
-
-Student Form – Enter student details
